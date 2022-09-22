@@ -18,8 +18,9 @@ import vtiger.GenericUtility.JavaUtility;
 import vtiger.GenericUtility.PropertyFileUtility;
 import vtiger.GenericUtility.WebdriverUtility;
 
+
+
 public class CreateContactWithLeadSource {
-	@Parameters("browser")
 	@Test
 	public void createConWithLeadSource () throws Exception {
 		// TODO Auto-generated method stub
