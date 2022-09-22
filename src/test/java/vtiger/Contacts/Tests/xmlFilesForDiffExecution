@@ -1,0 +1,74 @@
+/* .xml file
+ * ---> "BATCH" Execution
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+	<suite name="Suite">
+	  <test thread-count="5" name="Test" preserve-order="true">
+	    <classes>
+	      <class name="vtiger.Contacts.Tests.CreateContactsWithOrgs"/>
+	    </classes>
+	  </test> <!-- Test -->
+	</suite> <!-- Suite -->
+	
+	---->"GROUP" Execution
+1) Smoke/ Regression Suite	
+	<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+<groups>
+<run>
+	<include name="SmokeSuite"></include>
+//	<include name="RegressionSuite"></include>
+</run>
+</groups>
+
+
+  <test thread-count="5" name="Test" preserve-order="true">
+    <classes>
+      <class name="vtiger.Contacts.Tests.CreateContactsWithOrgs"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+2) Regional regression suite
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test" preserve-order="true">
+    <classes>
+      <class name="vtiger.Contacts.Tests.CreateContactsWithOrgs">
+   
+      <methods>
+      	<include name="demoRegression"></include>
+      </methods>
+      
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+*****PARELLEL Execution******
+*	1) Distributed parellel execution
+*
+*<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+	
+	<suite thread-count="1" parallel="tests" name="Suite">
+  <test thread-count="2" parallel="tests" name="Test">
+    <classes>
+      <class name="vtiger.Organization.Tests.CreateOrganisationTest"/>
+      <class name="vtiger.Organization.Tests.CreateOrgWithIndustry"/>
+    </classes>
+  </test> <!-- Test -->
+  
+    <test thread-count="2" parallel="tests" name="Test1">
+    <classes>
+      <class name="vtiger.Organization.Tests.CreateOrganisationTest"/>
+      <class name="vtiger.Organization.Tests.CreateOrgWithIndustry"/>
+    </classes>
+  </test>
+</suite> <!-- Suite -->
+
+*/
