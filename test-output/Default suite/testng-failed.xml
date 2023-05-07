@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="screenshotsFailed.GoogleTest">
+      <class name="vtiger.Organization.Tests.CreateOrganisationTest">
         <methods>
-          <include name="setup"/>
-          <include name="orangeHRM"/>
+          <include name="CreateOrganisation"/>
         </methods>
-      </class> <!-- screenshotsFailed.GoogleTest -->
+      </class> <!-- vtiger.Organization.Tests.CreateOrganisationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

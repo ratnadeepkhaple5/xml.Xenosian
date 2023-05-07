@@ -18,6 +18,10 @@ public class DataBaseUtility {
 	Driver driverRef;
 	Connection con=null;
 	
+	/**
+	 * This method will establish the connection with database
+	 * @throws SQLException
+	 */
 	public void connectDB() throws SQLException {
 		
 		driverRef=new Driver();
@@ -27,7 +31,12 @@ public class DataBaseUtility {
 		DriverManager.getConnection(IConstantsUtility.DBUrl, IConstantsUtility.DBusername, IConstantsUtility.DBpassword);
 		
 	}
+	/**
+	 * this method will close the database connection
+	 * @throws SQLException
+	 */
 	public void close() throws SQLException {
+	
 		con.close();
 	}
 	/**
@@ -51,13 +60,17 @@ public class DataBaseUtility {
 		ResultSet result = con.createStatement().executeQuery(query);
 		
 		while (result.next()) {	
+			
 			String actData=result.getString(columnIndex);
-	// Verifying the expData and actData from Database		
+			
+	    // Verifying the expData and actData from Database		
+			
 			if (actData.equals(expData)) {
 				flag=true;
 				break;
 			}
 		}
+		//return if exp data and act data is matching
 		if (flag) {
 			System.out.println("Data verified..!");
 			return expData;

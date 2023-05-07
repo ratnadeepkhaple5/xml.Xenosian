@@ -14,7 +14,8 @@ public class PropertyFileUtility {
 
 	public String readDataFromFile(String key) throws IOException {
 		
-		FileInputStream fis=new FileInputStream(".\\src\\test\\resources\\commonData.properties");
+	//	FileInputStream fis=new FileInputStream(".\\src\\test\\resources\\commonData.properties");
+		FileInputStream fis=new FileInputStream(IConstantsUtility.PropertyFilePath);
 
 		Properties pobj=new Properties();
 		

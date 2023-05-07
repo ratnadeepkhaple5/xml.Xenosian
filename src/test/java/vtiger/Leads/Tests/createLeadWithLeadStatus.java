@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -19,9 +20,10 @@ import vtiger.GenericUtility.JavaUtility;
 import vtiger.GenericUtility.PropertyFileUtility;
 import vtiger.GenericUtility.WebdriverUtility;
 
+@Listeners(vtiger.GenericUtility.ListenerImplementationClass.class)
 public class createLeadWithLeadStatus {
 
-	@Test
+	@Test(groups = "regRegressionSuite")
 	public static void createLeadsWithLeadStatus() throws IOException {
 		// TODO Auto-generated method stub
 		WebDriver driver=null;

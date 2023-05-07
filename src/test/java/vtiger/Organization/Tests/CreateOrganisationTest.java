@@ -23,7 +23,7 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateOrganisationTest {
-	@Test
+	@Test(retryAnalyzer = vtiger.GenericUtility.RetryAnalyserImplementation.class)
 	public void CreateOrganisation() throws Exception {
 	
 		WebDriver driver=null;
@@ -59,6 +59,7 @@ public class CreateOrganisationTest {
 		 driver=new ChromeDriver();
 		 System.out.println("chrome launched");
 	}else if(browser.equalsIgnoreCase("Edge")) {
+		WebDriverManager.edgedriver().setup();
 		driver=new EdgeDriver();
 		System.out.println("edge launched");
 	}else if (browser.equalsIgnoreCase("firefox")) {

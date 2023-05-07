@@ -23,7 +23,7 @@ public class CreateContactsWithOrgs {
 
 		WebDriver driver=null;
 		
-	//1) load all the data
+//	//1) load all the data
 		JavaUtility jUtil=new JavaUtility();
 		PropertyFileUtility pUtil=new PropertyFileUtility();
 		WebdriverUtility wUtil=new WebdriverUtility();
